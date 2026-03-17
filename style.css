@@ -381,7 +381,7 @@ ul {
 .btn-shop-highlight:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 28px rgba(199, 19, 69, 0.5);
-    background: #a50f38;
+    background: #fd0;
 }
 
 .btn-shop-highlight i {
