@@ -10,8 +10,8 @@
     --gold: #FFC107;
     --gold-dark: #e6a800;
     --gold-light: #ffdb58;
-    --magenta: #9b1e60;
-    --magenta-light: #c02878;
+    --magenta: #000000;
+    --magenta-light: #010101;
     --teal: #00897b;
     --teal-light: #26a69a;
     --white: #ffffff;
@@ -380,7 +380,7 @@ ul {
 
 .btn-shop-highlight:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 28px rgba(199, 19, 69, 0.5);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.5);
     background: #fd0;
 }
 
@@ -1663,6 +1663,155 @@ ul {
     border-radius: 5px;
 }
 
+/* --- Patient & Doctor Stories Gallery --- */
+.stories-gallery-header {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 32px;
+}
+
+.stories-gallery-header h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 12px;
+}
+
+.stories-gallery-header h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--gradient-gold);
+    border-radius: 4px;
+}
+
+.stories-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.story-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    position: relative;
+}
+
+.story-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.story-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.story-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.story-card:hover .story-image-wrapper img {
+    transform: scale(1.06);
+}
+
+.story-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 16px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.story-tag {
+    display: inline-block;
+    background: var(--gradient-gold);
+    color: var(--navy);
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    margin-bottom: 8px;
+    width: fit-content;
+    letter-spacing: 0.3px;
+}
+
+.story-overlay h4 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 2px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.story-overlay p {
+    font-size: 0.82rem;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* Stories responsive */
+@media (max-width: 1024px) {
+    .stories-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .stories-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .stories-gallery-header h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stories-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .stories-gallery-header h3 {
+        font-size: 1.15rem;
+    }
+
+    .story-overlay h4 {
+        font-size: 0.85rem;
+    }
+
+    .story-overlay p {
+        font-size: 0.72rem;
+    }
+
+    .story-tag {
+        font-size: 0.6rem;
+        padding: 3px 8px;
+    }
+}
+
 /* --- CTA Section --- */
 .cta-section {
     padding: 100px 0;
@@ -2419,7 +2568,7 @@ ul {
 
 .btn-shop-now:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(0, 44, 91, 0.45);
+    box-shadow: 0 12px 32px #071345;
     background: var(--navy-light);
 }
 
