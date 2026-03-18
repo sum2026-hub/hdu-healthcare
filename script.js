@@ -228,5 +228,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+    // --- Package Details Toggle ---
+    const togglePackageBtn = document.getElementById('togglePackageDetails');
+    const detailedTable = document.getElementById('detailedTable');
+    
+    if (togglePackageBtn && detailedTable) {
+        togglePackageBtn.addEventListener('click', () => {
+            const isHidden = detailedTable.style.display === 'none' || detailedTable.style.display === '';
+            
+            if (isHidden) {
+                detailedTable.style.display = 'block';
+                togglePackageBtn.classList.add('active');
+                togglePackageBtn.querySelector('span').textContent = 'Hide Detailed Price Breakdown';
+            } else {
+                detailedTable.style.display = 'none';
+                togglePackageBtn.classList.remove('active');
+                togglePackageBtn.querySelector('span').textContent = 'View Detailed Price Breakdown';
+            }
+        });
+    }
 
 });
